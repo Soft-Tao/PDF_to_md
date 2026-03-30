@@ -17,7 +17,7 @@ mineru -p <input_path> -o <output_path> -b pipeline # 基于CPU运行
 python convert_pdf.py <input_path>
 ```
 > 阿里云：*https://www.aliyun.com*
-3. 运行`merge_refine.py`，该程序首先调用具备图形理解能力的LLM，对MinerU分区得到的代码块进行独立识别，结合第二部给出的参考文档，给出准确率最好的数学公式代码块；然后调用文本处理LLM（如`qwen3-max`，根据用户prompt要求对最终文档进行精修。
+3. 运行`merge_refine.py`，该程序首先调用具备图形理解能力的LLM，对MinerU分区得到的代码块进行独立识别，结合第二步给出的参考文档，给出准确率最好的数学公式代码块；然后调用文本处理LLM（如`qwen3-max`），根据用户prompt要求对最终文档进行精修。
 ```
 python merge_refine.py --mineru-dir <mineru's output dir> --reference <path to step2's output>
 ```
